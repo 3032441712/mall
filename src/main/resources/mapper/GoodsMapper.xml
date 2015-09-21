@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dragon.mall.dao.DemoMapper">
+<mapper namespace="com.dragon.mall.dao.GoodsMapper">
     <select id="selectDemo" resultType="map">
-        SELECT * FROM demo WHERE id = #{id}
+        SELECT * FROM ecs_goods WHERE goods_id = #{id}
     </select>
 </mapper>

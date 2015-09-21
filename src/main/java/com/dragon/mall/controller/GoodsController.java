@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dragon.mall.base.BaseService;
-import com.dragon.mall.dao.DemoMapper;
+import com.dragon.mall.dao.GoodsMapper;
 
 @RestController
 public class GoodsController {
@@ -13,8 +13,8 @@ public class GoodsController {
     @RequestMapping("/goods/info")
     public String info() {
         SqlSession session = BaseService.getSqlSessionFactory().openSession();
-        DemoMapper demo = session.getMapper(DemoMapper.class);
-        System.out.println(demo.selectDemo(2));
+        GoodsMapper demo = session.getMapper(GoodsMapper.class);
+        System.out.println(demo.selectDemo(134));
         session.close();
         
         return "{\"code\":\"100\"}";
