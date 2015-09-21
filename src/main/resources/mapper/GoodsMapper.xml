@@ -6,4 +6,8 @@
     <select id="selectDemo" resultType="map">
         SELECT * FROM ecs_goods WHERE goods_id = #{id}
     </select>
+
+    <select id="selectGoodsInfo" resultType="map">
+        SELECT goods_id, goods_name, goods_sn FROM ecs_goods WHERE goods_id = #{id}
+    </select>
 </mapper>
