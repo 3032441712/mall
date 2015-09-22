@@ -33,6 +33,7 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
         responseUtil.setMessage("缺少通信字段,请查看文档.");
 
         Map<String, String[]> params = request.getParameterMap();
+
         if (params.get("source") == null) {
             validate = false;
             responseUtil.setCode(BaseException.NOT_FOUND_SOURCE);
