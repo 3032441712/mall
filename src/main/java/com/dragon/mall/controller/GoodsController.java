@@ -10,6 +10,6 @@ public class GoodsController {
     
     @RequestMapping("/goods/info")
     public String info() {
-        return GoodsModel.info(138);
+        return GoodsModel.info(17795);
     }
 }

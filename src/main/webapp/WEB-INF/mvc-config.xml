@@ -9,7 +9,7 @@
 
     <!-- Uncomment and your base-package here: <context:component-scan base-package="org.springframework.samples.web"/> -->
 
-
+    <!-- 设置服务器响应页面的编码为UTF-8 -->
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean
@@ -24,8 +24,16 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <bean class="com.dragon.mall.interceptor.AppInterceptor" />
+    </mvc:interceptors>
+
+    <!-- 扫描该包下的所有控制器累 -->
     <context:component-scan base-package="com.dragon.mall.controller" />
-    
-    <bean id="baseService" class="com.dragon.mall.base.BaseService" init-method="initService" />
-    
+
+    <!-- 初始化持久层服务 -->
+    <bean id="baseService" class="com.dragon.mall.base.BaseService"
+        init-method="initService" />
+
 </beans>
