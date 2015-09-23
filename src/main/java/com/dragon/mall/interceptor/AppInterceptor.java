@@ -1,9 +1,6 @@
 package com.dragon.mall.interceptor;
 
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,34 +33,12 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
         responseUtil.setMessage("缺少通信字段,请查看文档.");
 
         Map<String, String[]> params = request.getParameterMap();
-        // 系统级参数
         if (params.get("source") == null) {
             validate = false;
             responseUtil.setCode(BaseException.NOT_FOUND_SOURCE);
         } else if (params.get("version") == null) {
             validate = false;
             responseUtil.setCode(BaseException.NOT_FOUND_VERSION);
-        } else if (params.get("method") == null) {
-            validate = false;
-            responseUtil.setCode(BaseException.NOT_FOUND_METHOD);
-        } else if (params.get("app_id") == null) {
-            validate = false;
-            responseUtil.setCode(BaseException.NOT_FOUND_APP_ID);
-        } else if (params.get("token") == null) {
-            validate = false;
-            responseUtil.setCode(BaseException.NOT_FOUND_TOKEN);
-        }
-
-        String secure = "asdfdfsg345345345";
-        String signToken = "";
-        // 根据KEY升序排序
-        TreeMap<String, String[]> paramsTreeMap = new TreeMap<String, String[]>();
-        paramsTreeMap.putAll(params);
-        
-        Iterator<Entry<String, String[]>> paramsIterator = paramsTreeMap.entrySet().iterator();
-        while (paramsIterator.hasNext()) {
-            Entry<String, String[]> param = paramsIterator.next();
-            signToken += param.getKey()+param.getValue()[0];
         }
 
         if (validate == false) {
