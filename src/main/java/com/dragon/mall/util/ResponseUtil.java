@@ -1,9 +1,5 @@
 package com.dragon.mall.util;
 
-import java.util.Map;
-
-import com.alibaba.fastjson.JSON;
-
 /**
  * 应用响应工具类
  */
@@ -13,7 +9,7 @@ public class ResponseUtil {
 
     private String message = "";
 
-    private Map<String, Object> response = null;
+    private String response = null;
 
     public Integer getCode() {
         return code;
@@ -31,18 +27,18 @@ public class ResponseUtil {
         this.message = message;
     }
 
-    public Map<String, Object> getResponse() {
+    public String getResponse() {
         return response;
     }
 
-    public void setResponse(Map<String, Object> response) {
-        this.response = response;
+    public void setResponse(String string) {
+        this.response = string;
     }
 
     public String toJSON() {
         String content = "";
         if (this.response != null) {
-            content = "{\"code\":"+this.code+",\"message\":\""+this.message+"\", \"response\":"+JSON.toJSONString(this.response)+"}";
+            content = "{\"code\":"+this.code+",\"message\":\""+this.message+"\", \"response\":"+this.response+"}";
         } else {
             content = "{\"code\":"+this.code+",\"message\":\""+this.message+"\"}";
         }
