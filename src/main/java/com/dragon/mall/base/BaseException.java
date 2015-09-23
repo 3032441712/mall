@@ -11,10 +11,10 @@ public class BaseException extends Exception {
     public static final Integer NOT_FOUND_VERSION = 1002;
     
     // 没有找到token字段
-    public static final Integer NOT_FOUND_TOKEN = 1003;
+    public static final Integer NOT_FOUND_SIGN = 1003;
     
     // 签名不通过
-    public static final Integer VALIDATE_TOKEN_FAILURE = 1004;
+    public static final Integer VALIDATE_SIGN_FAILURE = 1004;
     
     // 没有找到方法字段
     public static final Integer NOT_FOUND_METHOD = 1005;
