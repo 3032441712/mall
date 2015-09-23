@@ -19,6 +19,9 @@ public class BaseException extends Exception {
     // 没有找到方法字段
     public static final Integer NOT_FOUND_METHOD = 1005;
     
+    // 应用ID
+    public static final Integer NOT_FOUND_APP_ID = 1006;
+        
     // 服务器内部通信错误
     public static final Integer SERVER_ERROR = 1100;
     
