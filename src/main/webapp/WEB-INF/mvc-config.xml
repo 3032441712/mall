@@ -31,9 +31,6 @@
 
     <!-- 扫描该包下的所有控制器累 -->
     <context:component-scan base-package="com.dragon.mall.controller" />
-
-    <!-- 初始化持久层服务 -->
-    <bean id="baseService" class="com.dragon.mall.base.BaseService"
-        init-method="initService" />
+    <context:component-scan base-package="com.dragon.mall.service" />
 
 </beans>

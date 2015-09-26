@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dragon.mall.dao.GoodsMapper">
     <select id="selectDemo" resultType="map">
-        SELECT * FROM ecs_goods WHERE goods_id = #{id}
+        SELECT * FROM ecs_goods WHERE goods_id = #{goodsId}
     </select>
 
     <select id="selectGoodsInfo" resultType="map">
-        SELECT goods_id, goods_name, goods_sn FROM ecs_goods WHERE goods_id = #{id}
+        SELECT goods_id, goods_name, goods_sn FROM ecs_goods WHERE goods_id = #{goodsId}
     </select>
 </mapper>
